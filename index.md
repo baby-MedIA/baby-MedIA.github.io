@@ -1,5 +1,5 @@
 # baby-MedIA@KCL
-We are a research group developing novel image analysis tools for fetal, neonatal and infant medical images, in particuar MRI and US.
+We are a research group developing novel image analysis tools for fetal, neonatal and infant medical images, in particular MRI and US.
 
 #### Principal investigator: [Dr Maria Deprez](https://kclpure.kcl.ac.uk/portal/maria.deprez.html)
 #### Research Associates: [Dr Irina Grigorescu](https://kclpure.kcl.ac.uk/portal/en/persons/irina-grigorescu-2), Dr Arnaud Boutillon
