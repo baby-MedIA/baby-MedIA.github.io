@@ -1,6 +1,5 @@
 # baby-MedIA@KCL
 We are a research group developing novel image analysis tools for fetal, neonatal and infant medical images, in particular MRI and US.
-
 We are part of [Metrics lab](https://metrics-lab.github.io/), [Centre for the Developing Brain](https://www.developingbrain.co.uk/about-the-centre-for-the-developing-brain/) and [School of Biomedical Engineering and Imaging Sciences](https://www.kcl.ac.uk/bmeis) at KCL.
 
 #### Principal investigator: [Dr Maria Deprez](https://kclpure.kcl.ac.uk/portal/maria.deprez.html)
