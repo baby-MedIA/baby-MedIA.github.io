@@ -1,1 +1,6 @@
 # baby-MedIA@KCL
+We are a research group developing novel image analysis tools for fetal, neonatal and infant medical images, in particuar MRI and US.
+
+#### Principal investigator: [Dr Maria Deprez](https://kclpure.kcl.ac.uk/portal/maria.deprez.html)
+#### Research Associates: [Dr Irina Grigorescu](https://kclpure.kcl.ac.uk/portal/en/persons/irina-grigorescu-2), Dr Arnaud Boutillon
+#### PhD students: [Helena Sousa](https://kclpure.kcl.ac.uk/portal/en/persons/k21019114), [Paula Ramirez Gilliland](https://kclpure.kcl.ac.uk/portal/en/persons/paula-ramirez-gilliland), [Yilan Dong](https://kclpure.kcl.ac.uk/portal/en/persons/yilan-dong), [Suryava Bhattacharya](https://kclpure.kcl.ac.uk/portal/en/persons/suryava-bhattacharya), [Lindsay Munroe](https://kclpure.kcl.ac.uk/portal/en/persons/lindsay-munroe), [Ioannis Valasakis](https://kclpure.kcl.ac.uk/portal/en/persons/ioannis-valasakis), [Hai Le](https://kclpure.kcl.ac.uk/portal/en/persons/le.hai)
