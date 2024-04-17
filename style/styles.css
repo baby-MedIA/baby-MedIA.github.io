@@ -38,10 +38,12 @@ body, html {
 
 /* Full height image header */
 .bgimg-1 {
-  background-position: right;
-  background-size: cover;
-  background-image: url("../imgs/viz/neonatal_dhcp_brains_2.png");
-  min-height: 100%;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-color:#000;
+  background-image: url("../imgs/viz/website-main-pic.png");
+  min-height: 90%;
 }
 
 .w3-bar .w3-button {

@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>BABY-MedIA@KCL</title>
-<link rel="icon" type="image/x-icon" href="imgs/viz/baby-logo.png">
+<link rel="icon" type="image/x-icon" href="imgs/viz/Baby-Logo-sm.svg">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -47,7 +47,7 @@ elem.css("backgroundImage", bgimg)
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="imgs/viz/Baby-Logo-sm.svg" height="18" alt="brain icon" /> BABY-MedIA@KCL</a>
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="imgs/viz/Baby-Logo-sm.svg" height="18" alt="babymedia icon" /> BABY-MedIA@KCL</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="#projects" class="w3-bar-item w3-button"><i class="fa fa-puzzle-piece"></i> PROJECTS</a>
@@ -77,13 +77,45 @@ elem.css("backgroundImage", bgimg)
 </nav>
 
 <!-- Delimiter -->
-<div class="w3-container w3-row w3-center w3-white w3-padding-32"></div>
+<!-- <div class="w3-container w3-row w3-center w3-white w3-padding-32"></div> -->
 <!-- Header with our group's images  w3-display-container w3-grayscale-min -->
-<header class="slideshow" id="home">
+<!-- <header class="slideshow" id="home">
   <div id="slideshow"></div>
-</header>
+</header> -->
 <!-- Delimiter -->
-<div class="w3-container w3-row w3-center w3-white w3-padding-8"></div>
+<!-- <div class="w3-container w3-row w3-center w3-white w3-padding-8"></div> -->
+
+<!-- Header with full-height image -->
+<div class="w3-container w3-row w3-center w3-black w3-padding-32"></div>
+<div class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">
+      <img src="imgs/viz/Baby-Logo.png" height="100" alt="babymedia icon" />Welcome to Baby-MedIA@KCL
+    </span>
+    <br><br>
+    <h3>We are a group of researchers based at King's College London,<br>
+        working towards improving our understanding of perinatal development.<br><br>
+        Our interests include: <br><br>
+        <ul>
+          <li>Image segmentation and registration</li>
+          <li>Interpretable Machine Learning</li>
+          <li>Functional and Diffusion MRI</li>
+          <li>lorem ipsum</li>
+          <li>lorem ipsum</li>
+          <li>lorem ipsum</li>
+          <li>lorem ipsum</li>
+          <li>lorem ipsum</li>
+          <li>lorem ipsum</li>
+        </ul>
+    </h3>
+    <br><br>
+    <p>
+      <a href="#projects" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Our Projects</a>
+      <a href="#team" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Our Team</a>
+      <a href="https://github.com/baby-MedIA" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Our Github Page</a>
+    </p>
+  </div>
+</div>
 
 <!-- Projects -->
 <div class="w3-container" style="padding:128px 16px" id="projects">
@@ -121,6 +153,23 @@ elem.css("backgroundImage", bgimg)
         <p></p>
         <h4>Five machine-learning models were trained to classify autism using ABIDE. Similar performance suggested accuracy variations in literature may stem from inclusion criteria, modalities and evaluation pipelines. SmoothGrad investigated the stability of features identified by models and showed structural and functional features from ventricles and temporal cortex contribute to autism identification. The results suggested that structural features from the ventricles and functional features from the temporal cortex made the most significant contributions to the algorithms identifying autistic participants.
         </h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="w3-container w3-light-grey" style="padding:64px 32px">
+    <div class="w3-row-padding">
+      <!-- Description -->
+      <div class="w3-col m6">
+        <h3>Segmentation of 6 months old babies</h3>
+        <p></p>
+        <h4>Project description
+        </h4>
+      </div>
+      <!-- Image -->
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="imgs/projects/projects-yilan-2.png" alt="Segmentation of 6 months old babies" width="700" height="394">
       </div>
     </div>
   </div>
@@ -673,7 +722,11 @@ elem.css("backgroundImage", bgimg)
   <br>
   <br>
   <div class="w3-xlarge w3-section">
-    <img class="circle-border" src="imgs/viz/Baby-Logo.png" alt="Baby drawing by Irina Grigorescu" style="width:15%">
+    <!-- class="circle-border" -->
+    <img src="imgs/viz/KCL-logo.jpg" alt="King's College London Logo" style="width:5%">
+    <img src="imgs/viz/Wellcome-logo.jpeg" alt="Wellcome Logo" style="width:3.8%">
+    <img src="imgs/viz/ERC-logo.jpg" alt="European Research Council Logo" style="width:4%">
+    <img src="imgs/viz/Baby-Logo.png" alt="Baby drawing Logo by Irina Grigorescu" style="width:2%">
   </div>
   <br>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
