@@ -11,20 +11,50 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link rel="stylesheet" href="style/styles.css">
 </head>
+
 <body>
+
+<!-- Script for the background images to cycle through -->
+<script type="text/javascript">
+  $(function() {
+  // set `$.fx.interval` at `0`
+  $.fx.interval = 0;
+  (function cycleBgImage(elem, bgimg) {
+// `elem`:`#slideshow`
+// set, reset, delay to `1000` after background image reset
+elem.css("backgroundImage", bgimg)
+  // fade in background image
+  .fadeTo(1000, 1, "linear", function() {
+    // set `delay` before fadeing out image
+    // fade in background image        
+    $(this).delay(10000, "fx").fadeTo(1000, 0, "linear", function() {
+      // split background image string at comma , creating array
+      var img = $(this).css("backgroundImage").split(","),
+        // concat first background image to `img` array,
+        // remove first background image from `img` array
+        bgimg = img.concat(img[0]).splice(1).join(",");
+      // recursively call `cycleBgImage`
+      cycleBgImage(elem, bgimg);
+    });
+  });
+  }($("#slideshow")));
+});
+</script>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">BABY-MedIA@KCL</a>
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="imgs/viz/Baby-Logo-sm.svg" height="18" alt="brain icon" /> BABY-MedIA@KCL</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-info"></i> ABOUT US</a>
+      <a href="#projects" class="w3-bar-item w3-button"><i class="fa fa-puzzle-piece"></i> PROJECTS</a>
       <a href="#software" class="w3-bar-item w3-button"><i class="fa fa-github-alt"></i> SOFTWARE</a>
       <a href="#publications" class="w3-bar-item w3-button"><i class="fa fa-child"></i> PUBLICATIONS</a>
       <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>      
+      <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-info"></i> ABOUT US</a>
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -38,27 +68,470 @@
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT US</a>
+  <a href="#projects" onclick="w3_close()" class="w3-bar-item w3-button">PROJECTS</a>
   <a href="#software" onclick="w3_close()" class="w3-bar-item w3-button">SOFTWARE</a>
   <a href="#publications" onclick="w3_close()" class="w3-bar-item w3-button">PUBLICATIONS</a>
   <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT US</a>
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
-<!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small">Baby-MedIA@KCL</span><br>
-    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more</a></p>
-  <!-- <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div> -->
+<!-- Delimiter -->
+<div class="w3-container w3-row w3-center w3-white w3-padding-32"></div>
+<!-- Header with our group's images  w3-display-container w3-grayscale-min -->
+<header class="slideshow" id="home">
+  <div id="slideshow"></div>
 </header>
+<!-- Delimiter -->
+<div class="w3-container w3-row w3-center w3-white w3-padding-8"></div>
+
+<!-- Projects -->
+<div class="w3-container" style="padding:128px 16px" id="projects">
+  <h3 class="w3-center">PROJECTS</h3>
+
+  <!-- Project 1 -->
+  <div class="w3-container w3-light-grey" style="padding:64px 32px">
+    <div class="w3-row-padding">
+      <!-- Description -->
+      <div class="w3-col m6">
+        <h3>Exploring Genetic Links: Neuroimaging Insights into Autism and Schizophrenia</h3>
+        <p></p>
+        <h4>This project focuses on exploring connections between neuroimaging indicators associated with genetic factors linked to both schizophrenia and autism. Our findings contribute to the growing body of evidence suggesting that common genetic variations associated with autism could potentially influence structural brain changes from an early stage of development.
+        </h4>
+      </div>
+      <!-- Image -->
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="imgs/projects/projects-hai-1.png" alt="Exploring Genetic Links: Neuroimaging Insights into Autism and Schizophrenia" width="700" height="394">
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-container w3-row w3-center w3-black w3-padding-8"></div>
+
+  <!-- Project 2 -->
+  <div class="w3-container w3-light-grey" style="padding:64px 32px">
+    <div class="w3-row-padding">
+      <!-- Image -->
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="imgs/projects/projects-yilan-1.png" alt="Reproducible comparison and interpretation of machine learning classifiers to predict autism on the ABIDE multimodal dataset" width="700" height="394">
+      </div>
+      <!-- Description -->
+      <div class="w3-col m6">
+        <h3>Reproducible comparison and interpretation of machine learning classifiers to predict autism on the ABIDE multimodal dataset</h3>
+        <p></p>
+        <h4>Five machine-learning models were trained to classify autism using ABIDE. Similar performance suggested accuracy variations in literature may stem from inclusion criteria, modalities and evaluation pipelines. SmoothGrad investigated the stability of features identified by models and showed structural and functional features from ventricles and temporal cortex contribute to autism identification. The results suggested that structural features from the ventricles and functional features from the temporal cortex made the most significant contributions to the algorithms identifying autistic participants.
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delimiter -->
+<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
+
+<!-- Software -->
+<div class="w3-container" style="padding:128px 16px" id="software">
+  <h3 class="w3-center">SOFTWARE</h3>
+
+  <!-- Softwares 2024 -->
+  <div class="w3-container w3-light-grey" style="padding:64px 32px">
+    <div class="w3-row-padding">
+      <!-- Description -->
+      <div class="w3-col m6">
+        <h3>Autism prediction on the ABIDE dataset</h3>
+        <br>
+        <h4>Comparison and interpretation of machine learning classifiers to predict autism on the ABIDE multimodal dataset.
+        </h4>
+        <br>
+        <p class="w3-opacity">Yilan Dong, 2024</p>
+        <p>
+          <a href="https://github.com/baby-MedIA/Machine-learning-with-ABIDE" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+        </p>
+      </div>
+      <!-- Image -->
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="imgs/software/yilan-abide.png" alt="Autism prediction on the ABIDE dataset" width="700" height="394">
+      </div>
+    </div>
+  </div>
+
+  <!-- Softwares 2023 -->
+  <div class="w3-container w3-light-grey" style="padding:64px 32px">
+    <div class="w3-row-padding">
+      <!-- Description -->
+      <div class="w3-col m6">
+        <h3>Fetal brain transient segmentation</h3>
+        <br>
+        <h4>Automatic Segmentation of Fetal brain into 25 tissues L/R including transient regions (Subplate and the Proliferative Zones: Ventricular Zone and Ganglionic Eminence) - trained with dHCP subjects from 21 to 36 weeks of gestational age.
+        </h4>
+        <br>
+        <p class="w3-opacity">Helena Sousa, 2023</p>
+        <p>
+          <a href="https://github.com/baby-MedIA/Fetal-brain-transient-segmentation" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+        </p>
+      </div>
+      <!-- Image -->
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="imgs/software/helena-fetal-seg.png" alt="Fetal brain transient segmentation" width="700" height="394">
+      </div>
+    </div>
+  </div>
+
+  <!-- Software 2023 cont'd -->
+  <div class="w3-container w3-light-grey" style="padding:64px 32px">
+    <div class="w3-row-padding">
+      <!-- Description -->
+      <div class="w3-col m6">
+        <h3>Multi-task Anomaly Segmentation and Classification</h3>
+        <br>
+        <h4>A Pytorch and <a href="https://monai.io/">MONAI</a> based multi-task framework for multi-class segmentation and classification.
+        </h4>
+        <br>
+        <p class="w3-opacity">Paula Ramirez Gilliland, 2023</p>
+        <p>
+          <a href="https://github.com/baby-MedIA/MASC--vessel-segmentation-classification" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+        </p>
+      </div>
+      <!-- Image -->
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="imgs/software/paula-masc.png" alt="Multi-task Anomaly Segmentation and Classification" width="700" height="394">
+      </div>
+    </div>
+  </div>
+
+  <!-- Software 2023 cont'd -->
+  <div class="w3-container w3-light-grey" style="padding:64px 32px">
+    <div class="w3-row-padding">
+      <!-- Description -->
+      <div class="w3-col m6">
+        <h3>Attention-driven multi-channel deformable registration of structural and microstructural neonatal data</h3>
+        <br>
+        <h4>Companion code for the <a href="https://doi.org/10.1007/978-3-031-17117-8_7">"Attention-Driven Multi-channel Deformable Registration of Structural and Microstructural Neonatal Data" paper</a> where we developed an attention-based multi-channel deep learning image registration framework that aims to combine information from structural MRI neonatal scans with diffusion-derived maps.
+        </h4>
+        <br>
+        <p class="w3-opacity">Irina Grigorescu, 2023</p>
+        <p>
+          <a href="https://github.com/baby-MedIA/attentionneonatalmriregistration" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+        </p>
+      </div>
+      <!-- Image -->
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="imgs/software/irina-attnreg.png" alt="Attention-driven multi-channel deformable registration of structural and microstructural neonatal data" width="700" height="394">
+      </div>
+    </div>
+  </div>
+
+  <!-- Software 2023 cont'd -->
+  <div class="w3-container w3-light-grey" style="padding:64px 32px">
+    <div class="w3-row-padding">
+      <!-- Description -->
+      <div class="w3-col m6">
+        <h3>Harmonised segmentation of neonatal brain MRI</h3>
+        <br>
+        <h4>Companion code for the <a href="https://doi.org/10.3389/fnins.2021.662005">"Harmonized Segmentation of Neonatal Brain MRI" paper</a> where we investigated unsupervised domain adaptation (UDA) methods and proposed the use of NCC loss to enforce image similarity between real and synthesised images, with the aim of predicting brain tissue segmentations of T2w MRI data of an unseen neonatal population.
+        </h4>
+        <br>
+        <p class="w3-opacity">Irina Grigorescu, 2023</p>
+        <p>
+          <a href="https://github.com/baby-MedIA/udaneonatalmri" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+        </p>
+      </div>
+      <!-- Image -->
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="imgs/software/irina-uda.jpg" alt="Harmonised segmentation of neonatal brain MRI" width="700" height="394">
+      </div>
+    </div>
+  </div>
+
+  <!-- Software 2023 cont'd -->
+  <div class="w3-container w3-light-grey" style="padding:64px 32px">
+    <div class="w3-row-padding">
+      <!-- Description -->
+      <div class="w3-col m6">
+        <h3>Fetal SS FSE Simulation - A modified FaBiAN phantom</h3>
+        <br>
+        <h4>A silmulation of single-shot Fast spin echo sequences on a simulated moving fetal brain for a Philip's MRI system.
+        </h4>
+        <br>
+        <p class="w3-opacity">Suryava Bhattacharya, 2023</p>
+        <p>
+          <a href="https://github.com/baby-MedIA/FetalSSFSESimulation" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+        </p>
+      </div>
+      <!-- Image -->
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="imgs/software/suryava-sim.png" alt="FetalSSFSESimulation - A modified FaBiAN phantom" width="700" height="394">
+      </div>
+    </div>
+  </div>
+  
+
+</div>
+
+<!-- Delimiter -->
+<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
+
+<!-- Publications Section -->
+<div class="w3-container" style="padding:128px 16px" id="publications">
+  <h3 class="w3-center">PUBLICATIONS</h3>
+
+  <!-- Groups of three -->
+  <div class="w3-row-padding" style="margin-top:64px">
+    <!-- publication 1 -->
+    <div class="w3-col m4">
+      <img src="imgs/publications/hai-schizophrenia.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Effect of schizophrenia common variants on infant brain volumes: cross-sectional study in 207 term neonates in developing Human Connectome Project">
+      <div class="w3-container">
+        <p class="w3-opacity">Effect of schizophrenia common variants on infant brain volumes: cross-sectional study in 207 term neonates in developing Human Connectome Project</p>
+        <p class="w3-opacity">Hai Le et al., 2023</p>
+        <p>
+          <a href="https://www.nature.com/articles/s41398-023-02413-6" class="w3-button w3-black"><i class="fa fa-link"> </i>Translational Psychiatry</a>
+        </p>
+      </div>
+    </div>
+    <!-- publication 2 -->
+    <div class="w3-col m4">
+      <img src="imgs/publications/paula-mcseg.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Automated Multi-class Fetal Cardiac Vessel Segmentation">
+      <div class="w3-container">
+        <p class="w3-opacity">Automated Multi-class Fetal Cardiac Vessel Segmentation in Aortic Arch Anomalies Using T2-Weighted 3D Fetal MRI</p>
+        <p class="w3-opacity">Paula Ramirez Gilliland et al., 2022</p>
+        <p>
+          <a href="https://link.springer.com/chapter/10.1007/978-3-031-17117-8_8" class="w3-button w3-black"><i class="fa fa-link"> </i>Springer</a>
+        </p>
+      </div>
+    </div>
+    <!-- publication 3 -->
+    <div class="w3-col m4">
+      <img src="imgs/publications/irina-uda.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Harmonized Segmentation of Neonatal Brain MRI">
+      <div class="w3-container">
+        <p class="w3-opacity">Harmonized Segmentation of Neonatal Brain MRI</p>
+        <p class="w3-opacity">Irina Grigorescu et al., 2021</p>
+        <p>
+          <a href="https://www.frontiersin.org/articles/10.3389/fnins.2021.662005/full" class="w3-button w3-black"><i class="fa fa-link"> </i>Frontiers in Neuroscience</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Groups of three -->
+  <div class="w3-row-padding" style="margin-top:64px">
+    <!-- publication 1 -->
+    <div class="w3-col m4">
+      <img src="imgs/publications/suryava-ssfse.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quantitative T2 Relaxometry in Fetal Brain: Validation Using Modified FaBiaN Fetal Brain MRI Simulator">
+      <div class="w3-container">
+        <p class="w3-opacity">Quantitative T2 Relaxometry in Fetal Brain: Validation Using Modified FaBiaN Fetal Brain MRI Simulator</p>
+        <p class="w3-opacity">Bhattacharya, S. et al., 2023</p>
+        <p>
+          <a href="https://doi.org/10.1007/978-3-031-45544-5_4" class="w3-button w3-black"><i class="fa fa-link"> </i>PIPPI, LNCS, Springer</a>
+        </p>
+      </div>
+    </div>
+    <!-- publication 2 -->
+    <div class="w3-col m4">
+      <img src="imgs/publications/maria-ml-book.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Machine Learning for Biomedical Applications Book Cover">
+      <div class="w3-container">
+        <p class="w3-opacity">Machine Learning for Biomedical Applications: with Scikit-Learn and Pytorch</p>
+        <p class="w3-opacity">Maria Deprez and Emma C. Robinson, 2022</p>
+        <p>
+          <a href="https://www.sciencedirect.com/book/9780128229040/machine-learning-for-biomedical-applications" class="w3-button w3-black"><i class="fa fa-link"> </i>Elsevier</a>
+        </p>
+      </div>
+    </div>
+    <!-- publication 3 -->
+
+  </div>
+
+</div>
+
+<!-- Delimiter -->
+<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
+
+<!-- Team Section -->
+<div class="w3-container" style="padding:128px 32px" id="team">
+  <h3 class="w3-center">THE TEAM</h3>
+
+  <!-- Groups of 6 people -->
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+
+    <!-- Maria Deprez -->
+    <div class="w3-col l2 m4 w3-margin-bottom my-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/maria-deprez-photo.jpg" alt="Maria Deprez" style="width:100%">
+        <div class="w3-container">
+          <h3>Dr Maria Deprez</h3>
+          <p class="w3-opacity">Senior Lecturer in Medical Imaging</p>
+          <p>Motion Correction, Image Registration and Segmentation, Spatio-temporal Atlases, Machine Learning.</p>
+          <!-- <p>  class="w3-center"> -->
+          <p>
+            <a href="https://www.kcl.ac.uk/people/maria-deprez"><i class="fa fa-university"> </i></a>
+            <a href="https://github.com/mariadeprez"><i class="fa fa-github"> </i></a>
+            <a href="https://scholar.google.co.uk/citations?user=qtojUaIAAAAJ&hl=en"><i class="fa fa-link"> </i></a>
+            <a href="mailto:maria.deprez(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arnaud Boutillon -->
+    <div class="w3-col l2 m4 w3-margin-bottom my-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/arnaud-boutillon-photo.jpg" alt="Arnaud Boutillon" style="width:100%">
+        <div class="w3-container">
+          <h3>Dr Arnaud Boutillon</h3>
+          <p class="w3-opacity">Research Associate</p>
+          <p>Developing tools for brain conductivity measurements and 3D+T fetal cardiac MRI.</p>
+          <p></p>
+          <p> 
+            <a href="https://www.kcl.ac.uk/people/arnaud-boutillon"><i class="fa fa-university"> </i></a>
+            <a href="https://www.researchgate.net/profile/Arnaud-Boutillon"><i class="fa fa-link"> </i></a>
+            <a href="mailto:arnaud.boutillon(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Irina Grigorescu -->
+    <div class="w3-col l2 m4 w3-margin-bottom my-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/irina-grigorescu-photo.jpg" alt="Irina Grigorescu" style="width:100%">
+        <div class="w3-container">
+          <h3>Dr Irina Grigorescu</h3>
+          <p class="w3-opacity">Research Associate</p>
+          <p>Fetal and neonatal MRI analysis, Deep Learning Image Registration and Segmentation</p>
+          <!-- , Diffusion MR Imaging, Domain Adaptation and Data Harmonisation -->
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/irina-grigorescu-2"><i class="fa fa-university w3-hover-opacity"></i></a>
+            <a href="https://github.com/irinagrigorescu"><i class="fa fa-github"> </i></a>
+            <a href="https://scholar.google.com/citations?user=Ko-4p8gAAAAJ&hl=en"><i class="fa fa-link"> </i></a>
+            <a href="mailto:irina.grigorescu(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hai Le -->
+    <div class="w3-col l2 m4 w3-margin-bottom my-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/hai-le-photo.jpeg" alt="Hai Le" style="width:100%">
+        <div class="w3-container">
+          <h3>Hai Le</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Characterising abnormal early brain development using diffusion MRI and machine learning.</p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/le.hai"><i class="fa fa-university"> </i></a>
+            <a href="mailto:le.hai(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Helena Sousa -->
+    <div class="w3-col l2 m4 w3-margin-bottom my-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/helena-sousa-photo.jpg" alt="Helena Sousa" style="width:100%">
+        <div class="w3-container">
+          <h3>Helena Sousa</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Using Deep learning to study Early Neurodevelopment with Multimodal MR Imaging data of the Fetal Brain.</p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/k21019114"><i class="fa fa-university"> </i></a>
+            <a href="mailto:helena.sousa(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ioannis Valasakis -->
+    <div class="w3-col l2 m4 w3-margin-bottom my-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/ioannis-valasakis-photo.jpg" alt="Ioannis Valasakis" style="width:100%">
+        <div class="w3-container">
+          <h3>Ioannis Valasakis</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Developing methods for predicting phenotypes for ASD from neonatal brain connectivity.</p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/ioannis-valasakis"><i class="fa fa-university"> </i></a>
+            <a href="https://github.com/wizofe"><i class="fa fa-github"> </i></a>
+            <a href="https://www.code-neuro.com/author/ioannis-valasakis/"><i class="fa fa-link"> </i></a>
+            <a href="mailto:ioannis.valasakis(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Another group of 6 people -->
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+
+    <!-- Lindsay Munroe -->
+    <div class="w3-col l2 m4 w3-margin-bottom my-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/lindsay-munroe-photo.jpg" alt="Lindsay Munroe" style="width:100%">
+        <div class="w3-container">
+          <h3>Lindsay Munroe</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Developing deep learning tools for mining for iron in the brain.                                                                 </p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/lindsay-munroe/"><i class="fa fa-university"> </i></a>
+            <a href="mailto:lindsay.munroe(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paula Ramirez Gilliland -->
+    <div class="w3-col l2 m4 w3-margin-bottom my-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/paula-gilliland-photo.jpg" alt="Paula Ramirez Gilliland" style="width:100%">
+        <div class="w3-container">
+          <h3>Paula Ramirez Gilliland</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Deep learning for diagnosis of congenital heart disease in fetus using MRI and ultrasound.</p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/paula-ramirez-gilliland"><i class="fa fa-university"> </i></a>
+            <a href="mailto:paula.ramirez_gilliland(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Suryava Bhattacharya -->
+    <div class="w3-col l2 m4 w3-margin-bottom my-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/suryava-bhattacharya-photo.jpg" alt="Suryava Bhattacharya" style="width:100%">
+        <div class="w3-container">
+          <h3>Suryava Bhattacharya</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Quantitative mapping of developing fetal organs using dynamic MRI and artificial neural networks.</p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/suryava-bhattacharya/"><i class="fa fa-university"> </i></a>
+            <a href="mailto:suryava.bhattacharya(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Yilan Dong -->
+    <div class="w3-col l2 m4 w3-margin-bottom my-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/yilan-dong-photo.jpg" alt="Yilan Dong" style="width:100%">
+        <div class="w3-container">
+          <h3>Yilan Dong</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Developing machine learning tools to uncover the early origins of neurodevelopmental disorders.</p>
+          <p>
+            <a href="https://www.kcl.ac.uk/people/yilan-dong"><i class="fa fa-university"> </i></a>
+            <a href="https://www.code-neuro.com/author/yilan-dong/"><i class="fa fa-link"> </i></a>
+            <a href="mailto:yilan.dong(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+<!-- Delimiter -->
+<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
 
 <!-- About Section -->
 <div class="w3-container" style="padding:128px 16px" id="about">
@@ -106,299 +579,50 @@
   </div>
 </div>
 
-<!-- Delimiter -->
-<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
+<!-- Carousel Images of our group -->
+<div class="container w3-white" style="padding:128px 16px">  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
 
-<!-- Software -->
-<div class="w3-container" style="padding:128px 16px" id="software">
-  <h3 class="w3-center">SOFTWARE</h3>
-  
-  <!-- 1st row -->
-  <div class="w3-row-padding" style="margin-top:64px">
-    <!-- 1 -->
-    <div class="w3-col l3 m6">
-      <img src="imgs/software/ml-book.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Machine Learning for Biomedical Applications Book Cover">
-      <div class="w3-container">
-        <br>
-        <p class="w3-center"><a href="https://github.com/MachineLearningBiomedicalApplications" class="w3-button w3-black"><i class="fa fa-link"> </i>Machine Learning for Biomedical Applications</a></p>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="imgs/group-photos/group-1.jpeg" class="w3-image" style="width:100%">
       </div>
-    </div>
-    <!-- 2 -->
-    <!-- <div class="w3-col l3 m6">
-      <img src="/w3images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
-    </div> -->
-    <!-- 3 -->
-    <!-- <div class="w3-col l3 m6">
-      <img src="/w3images/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
-    </div> -->
-    <!-- 4 -->
-    <!-- <div class="w3-col l3 m6">
-      <img src="/w3images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
-    </div> -->
-  </div>
 
-  <!-- 2nd row -->
-  <!-- <br>
-  <h4 class="w3-center">Miscellaneous</h4>
-  <br>
-  <div class="w3-row-padding w3-section"> -->
-    <!-- 1 -->
-    <!-- <div class="w3-col l3 m6">
-      <img src="imgs/software/ml-book.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Machine Learning for Biomedical Applications Book Cover">
-      <div class="w3-container">
-        <br>
-        <p class="w3-center"><a href="https://github.com/MachineLearningBiomedicalApplications" class="w3-button w3-black"><i class="fa fa-link"> </i>Machine Learning for Biomedical Applications</a></p>
+      <div class="item">
+        <img src="imgs/group-photos/group-2.jpeg" class="w3-image" style="width:100%">
       </div>
-    </div> -->
-    <!-- 2 -->
-    <!-- <div class="w3-col l3 m6">
-      <img src="/w3images/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
-    </div> -->
-    <!-- 3 -->
-    <!-- <div class="w3-col l3 m6">
-      <img src="/w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
-    </div> -->
-    <!-- 4 -->
-    <!-- <div class="w3-col l3 m6">
-      <img src="/w3images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
-    </div>
-  </div> -->
-</div>
+    
+      <div class="item">
+        <img src="imgs/group-photos/group-3.jpeg" class="w3-image" style="width:100%">
+      </div>
 
-<!-- Delimiter -->
-<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
+      <div class="item">
+        <img src="imgs/group-photos/group-4.jpeg" class="w3-image" style="width:100%">
+      </div>
 
-<!-- Publications Section -->
-<div class="w3-container" style="padding:128px 16px" id="publications">
-  <h3 class="w3-center">PUBLICATIONS</h3>
-  <!-- <p class="w3-center w3-large">What we've done for people</p> -->
+      <div class="item">
+        <img src="imgs/group-photos/group-5.jpeg" class="w3-image" style="width:100%">
+      </div>
+    </div>
 
-  <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-col l4 m6">
-      <img src="imgs/projects/hai-schizophrenia.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Effect of schizophrenia common variants on infant brain volumes: cross-sectional study in 207 term neonates in developing Human Connectome Project">
-      <div class="w3-container">
-        <p class="w3-opacity">Effect of schizophrenia common variants on infant brain volumes: cross-sectional study in 207 term neonates in developing Human Connectome Project</p>
-        <p class="w3-opacity">Hai Le et al., 2023</p>
-        <p>
-          <a href="https://www.nature.com/articles/s41398-023-02413-6" class="w3-button w3-black"><i class="fa fa-link"> </i>Translational Psychiatry</a>
-        </p>
-      </div>
-    </div>
-    <div class="w3-col l4 m6">
-      <img src="imgs/projects/paula-mcseg.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Automated Multi-class Fetal Cardiac Vessel Segmentation">
-      <div class="w3-container">
-        <p class="w3-opacity">Automated Multi-class Fetal Cardiac Vessel Segmentation in Aortic Arch Anomalies Using T2-Weighted 3D Fetal MRI</p>
-        <p class="w3-opacity">Paula Ramirez Gilliland et al., 2022</p>
-        <p>
-          <a href="https://link.springer.com/chapter/10.1007/978-3-031-17117-8_8" class="w3-button w3-black"><i class="fa fa-link"> </i>Springer</a>
-        </p>
-      </div>
-    </div>
-    <div class="w3-col l4 m6">
-      <img src="imgs/projects/irina-uda.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Harmonized Segmentation of Neonatal Brain MRI">
-      <div class="w3-container">
-        <p class="w3-opacity">Harmonized Segmentation of Neonatal Brain MRI</p>
-        <p class="w3-opacity">Irina Grigorescu et al., 2021</p>
-        <p>
-          <a href="https://www.frontiersin.org/articles/10.3389/fnins.2021.662005/full" class="w3-button w3-black"><i class="fa fa-link"> </i>Frontiers in Neuroscience</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- <div class="w3-row-padding w3-section">
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
-    </div>
-  </div> -->
-</div>
-
-<!-- Delimiter -->
-<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
-
-<!-- Team Section -->
-<div class="w3-container" style="padding:128px 32px" id="team">
-  <h3 class="w3-center">THE TEAM</h3>
-  <!-- <p class="w3-center w3-large">The ones behind the research</p> -->
-  <!-- Maria Deprez -->
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="imgs/team/maria-deprez-photo.jpg" alt="Maria Deprez" style="width:100%">
-        <div class="w3-container">
-          <h3>Dr Maria Deprez</h3>
-          <p class="w3-opacity">Senior Lecturer in Medical Imaging</p>
-          <p>Motion Correction of Fetal MRI, Image Registration and Segmentation, Spatio-temporal Atlases, Machine Learning.</p>
-          <p>  <!-- <p>  class="w3-center"> -->
-            <a href="https://www.kcl.ac.uk/people/maria-deprez" class="w3-button w3-black"><i class="fa fa-university"> </i>KCL</a>
-            <a href="https://github.com/mariadeprez" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
-            <a href="https://scholar.google.co.uk/citations?user=qtojUaIAAAAJ&hl=en" class="w3-button w3-black"><i class="fa fa-link"> </i>Scholar</a>
-            <a href="mailto:maria.deprez(at)kcl.ac.uk" class="w3-button w3-black"><i class="fa fa-envelope"> </i>Mail</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  <!-- </div>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px"> -->
-    <!-- Arnaud Boutillon -->
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="imgs/team/arnaud-boutillon-photo.jpg" alt="Arnaud Boutillon" style="width:100%">
-        <div class="w3-container">
-          <h3>Dr Arnaud Boutillon</h3>
-          <p class="w3-opacity">Research Associate</p>
-          <p>Developing tools for brain conductivity measurements and 3D+T fetal cardiac MRI.</p>
-          <p></p>
-          <p>  <!-- <p>  class="w3-center"> -->
-            <a href="https://www.kcl.ac.uk/people/arnaud-boutillon" class="w3-button w3-black"><i class="fa fa-university"> </i>KCL</a>
-            <!-- <a href="https://github.com/arnaudboutillon" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a> -->
-            <a href="https://www.researchgate.net/profile/Arnaud-Boutillon" class="w3-button w3-black"><i class="fa fa-link"> </i>ResearchGate</a>
-            <a href="mailto:arnaud.boutillon(at)kcl.ac.uk" class="w3-button w3-black"><i class="fa fa-envelope"> </i>Mail</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Irina Grigorescu -->
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="imgs/team/irina-grigorescu-photo.jpg" alt="Irina Grigorescu" style="width:100%">
-        <div class="w3-container">
-          <h3>Dr Irina Grigorescu</h3>
-          <p class="w3-opacity">Research Associate</p>
-          <p>Fetal and neonatal MRI analysis, Deep Learning Image Registration and Segmentation</p>
-          <!-- , Diffusion MR Imaging, Domain Adaptation and Data Harmonisation -->
-          <p>  <!-- <p>  class="w3-center"> -->
-            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/irina-grigorescu-2" class="w3-button w3-black"><i class="fa fa-university"> </i>KCL</a>
-            <a href="https://github.com/irinagrigorescu" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
-            <a href="https://scholar.google.com/citations?user=Ko-4p8gAAAAJ&hl=en" class="w3-button w3-black"><i class="fa fa-link"> </i>Scholar</a>
-            <a href="mailto:irina.grigorescu(at)kcl.ac.uk" class="w3-button w3-black"><i class="fa fa-envelope"> </i>Mail</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- group-of-three -->
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <!-- Hai Le -->
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="imgs/team/hai-le-photo.jpeg" alt="Hai Le" style="width:100%">
-        <div class="w3-container">
-          <h3>Hai Le</h3>
-          <p class="w3-opacity">PhD Student</p>
-          <p>Characterising abnormal early brain development using diffusion MRI and machine learning.</p>
-          <p>
-            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/le.hai" class="w3-button w3-black"><i class="fa fa-university"> </i>KCL</a>
-            <a href="mailto:le.hai(at)kcl.ac.uk" class="w3-button w3-black"><i class="fa fa-envelope"> </i>Mail</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Helena Sousa -->
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="imgs/team/helena-sousa-photo.jpg" alt="Helena Sousa" style="width:100%">
-        <div class="w3-container">
-          <h3>Helena Sousa</h3>
-          <p class="w3-opacity">PhD Student</p>
-          <p>Using Deep learning to study Early Neurodevelopment with Multimodal MR Imaging data of the Fetal Brain.</p>
-          <p>
-            <a href="mailto:helena.sousa(at)kcl.ac.uk" class="w3-button w3-black"><i class="fa fa-envelope"> </i>Mail</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Ioannis Valasakis -->
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="imgs/team/ioannis-valasakis-photo.jpg" alt="Ioannis Valasakis" style="width:100%">
-        <div class="w3-container">
-          <h3>Ioannis Valasakis</h3>
-          <p class="w3-opacity">PhD Student</p>
-          <p>Developing methods for predicting phenotypes for autism spectrum disorder from neonatal brain connectivity.</p>
-          <p>
-            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/ioannis-valasakis" class="w3-button w3-black"><i class="fa fa-university"> </i>KCL</a>
-            <a href="https://github.com/wizofe" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
-            <a href="https://www.code-neuro.com/author/ioannis-valasakis/" class="w3-button w3-black"><i class="fa fa-link"> </i>CoDe Neuro</a>
-            <a href="mailto:ioannis.valasakis(at)kcl.ac.uk" class="w3-button w3-black"><i class="fa fa-envelope"> </i>Mail</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- group-of-three -->
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <!-- Lindsay Munroe -->
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="imgs/team/lindsay-munroe-photo.jpg" alt="Lindsay Munroe" style="width:100%">
-        <div class="w3-container">
-          <h3>Lindsay Munroe</h3>
-          <p class="w3-opacity">PhD Student</p>
-          <p>Developing deep learning tools for mining for iron in the brain.</p>
-          <p>
-            <a href="mailto:lindsay.munroe(at)kcl.ac.uk" class="w3-button w3-black"><i class="fa fa-envelope"> </i>Mail</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Paula Ramirez Gilliland -->
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="imgs/team/paula-gilliland-photo.jpg" alt="Paula Ramirez Gilliland" style="width:100%">
-        <div class="w3-container">
-          <h3>Paula Ramirez Gilliland</h3>
-          <p class="w3-opacity">PhD Student</p>
-          <p>Deep learning for diagnosis of congenital heart disease in fetus using MRI and ultrasound.</p>
-          <p>
-            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/paula-ramirez-gilliland" class="w3-button w3-black"><i class="fa fa-university"> </i>KCL</a>
-            <a href="mailto:paula.ramirez_gilliland(at)kcl.ac.uk" class="w3-button w3-black"><i class="fa fa-envelope"> </i>Mail</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Suryava Bhattacharya -->
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="imgs/team/suryava-bhattacharya-photo.jpg" alt="Suryava Bhattacharya" style="width:100%">
-        <div class="w3-container">
-          <h3>Suryava Bhattacharya</h3>
-          <p class="w3-opacity">PhD Student</p>
-          <p>Quantitative mapping of developing fetal organs using dynamic MRI and artificial neural networks.</p>
-          <p>
-            <a href="mailto:suryava.bhattacharya(at)kcl.ac.uk" class="w3-button w3-black"><i class="fa fa-envelope"> </i>Mail</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- group-of-three -->
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <!-- Yilan Dong -->
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="imgs/team/yilan-dong-photo.jpg" alt="Yilan Dong" style="width:100%">
-        <div class="w3-container">
-          <h3>Yilan Dong</h3>
-          <p class="w3-opacity">PhD Student</p>
-          <p>Developing machine learning tools to uncover the early origins of neurodevelopmental disorders</p>
-          <p>
-            <a href="https://www.kcl.ac.uk/people/yilan-dong" class="w3-button w3-black"><i class="fa fa-university"> </i>KCL</a>
-            <a href="https://www.code-neuro.com/author/yilan-dong/" class="w3-button w3-black"><i class="fa fa-link"> </i>CoDe Neuro</a>
-            <a href="mailto:yilan.dong(at)kcl.ac.uk" class="w3-button w3-black"><i class="fa fa-envelope"> </i>Mail</a>
-          </p>
-        </div>
-      </div>
-    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 </div>
 
@@ -434,49 +658,6 @@
 <!-- Delimiter -->
 <div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
 
-
-<!-- <div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
-  <div style="margin-top:48px">
-    <img src="imgs/viz/stthomas-background.jpg" class="w3-image" style="width:100%;margin-top:48px">
-  </div>
-</div>  -->
-<!-- Carousel Images of KCL -->
-<div class="container w3-white" style="padding:128px 16px">  
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="imgs/viz/stthomas-background.jpg" class="w3-image" style="width:100%">
-      </div>
-
-      <div class="item">
-        <img src="imgs/viz/kcl-background.jpg" class="w3-image" style="width:100%">
-      </div>
-    
-      <div class="item">
-        <img src="imgs/viz/london-background.jpg" class="w3-image" style="width:100%">
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
@@ -492,7 +673,7 @@
   <br>
   <br>
   <div class="w3-xlarge w3-section">
-    <img class="circle-border" src="imgs/viz/baby-logo.png" alt="Baby drawing by Irina Grigorescu" style="width:15%">
+    <img class="circle-border" src="imgs/viz/Baby-Logo.png" alt="Baby drawing by Irina Grigorescu" style="width:15%">
   </div>
   <br>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
