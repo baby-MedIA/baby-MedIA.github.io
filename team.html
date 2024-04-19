@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BABY-MedIA@KCL</title>
+<link rel="icon" type="image/x-icon" href="imgs/viz/Baby-Logo-sm.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="style/styles.css">
+</head>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button w3-wide"><img src="imgs/viz/Baby-Logo-sm.svg" height="18" alt="babymedia icon" /> BABY-MedIA@KCL</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="projects.html" class="w3-bar-item w3-button"><i class="fa fa-puzzle-piece"></i> PROJECTS</a>
+      <a href="software.html" class="w3-bar-item w3-button"><i class="fa fa-github-alt"></i> SOFTWARE</a>
+      <a href="publications.html" class="w3-bar-item w3-button"><i class="fa fa-child"></i> PUBLICATIONS</a>
+      <a href="team.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>      
+      <a href="about.html#about" class="w3-bar-item w3-button"><i class="fa fa-info"></i> ABOUT US</a>
+      <a href="about.html#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="projects.html" onclick="w3_close()" class="w3-bar-item w3-button">PROJECTS</a>
+  <a href="software.html" onclick="w3_close()" class="w3-bar-item w3-button">SOFTWARE</a>
+  <a href="publications.html" onclick="w3_close()" class="w3-bar-item w3-button">PUBLICATIONS</a>
+  <a href="team.html" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="about.html#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT US</a>
+  <a href="contact.html#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+
+<!-- Team Section -->
+<div class="w3-container" style="padding:128px 32px" id="team">
+  <h3 class="w3-center">THE TEAM</h3>
+
+  <!-- Groups of 6 people -->
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+
+    <!-- Maria Deprez -->
+    <div class="w3-col l2 m4 w3-margin-bottom team-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/maria-deprez-photo.jpg" alt="Maria Deprez" style="width:100%">
+        <div class="w3-container">
+          <h3>Dr Maria Deprez</h3>
+          <p class="w3-opacity">Senior Lecturer in Medical Imaging</p>
+          <p>Motion Correction, Image Registration and Segmentation, Spatio-temporal Atlases, Machine Learning.</p>
+          <!-- <p>  class="w3-center"> -->
+          <p>
+            <a href="https://www.kcl.ac.uk/people/maria-deprez"><i class="fa fa-university"> </i></a>
+            <a href="https://github.com/mariadeprez"><i class="fa fa-github"> </i></a>
+            <a href="https://scholar.google.co.uk/citations?user=qtojUaIAAAAJ&hl=en"><i class="fa fa-link"> </i></a>
+            <a href="mailto:maria.deprez(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arnaud Boutillon -->
+    <div class="w3-col l2 m4 w3-margin-bottom team-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/arnaud-boutillon-photo.jpg" alt="Arnaud Boutillon" style="width:100%">
+        <div class="w3-container">
+          <h3>Dr Arnaud Boutillon</h3>
+          <p class="w3-opacity">Research Associate</p>
+          <p>Developing tools for brain conductivity measurements and 3D+T fetal cardiac MRI.</p>
+          <p></p>
+          <p> 
+            <a href="https://www.kcl.ac.uk/people/arnaud-boutillon"><i class="fa fa-university"> </i></a>
+            <a href="https://www.researchgate.net/profile/Arnaud-Boutillon"><i class="fa fa-link"> </i></a>
+            <a href="mailto:arnaud.boutillon(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Irina Grigorescu -->
+    <div class="w3-col l2 m4 w3-margin-bottom team-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/irina-grigorescu-photo.jpg" alt="Irina Grigorescu" style="width:100%">
+        <div class="w3-container">
+          <h3>Dr Irina Grigorescu</h3>
+          <p class="w3-opacity">Research Associate</p>
+          <p>Fetal and neonatal MRI analysis, Deep Learning Image Registration and Segmentation</p>
+          <!-- , Diffusion MR Imaging, Domain Adaptation and Data Harmonisation -->
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/irina-grigorescu-2"><i class="fa fa-university w3-hover-opacity"></i></a>
+            <a href="https://github.com/irinagrigorescu"><i class="fa fa-github"> </i></a>
+            <a href="https://scholar.google.com/citations?user=Ko-4p8gAAAAJ&hl=en"><i class="fa fa-link"> </i></a>
+            <a href="mailto:irina.grigorescu(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hai Le -->
+    <div class="w3-col l2 m4 w3-margin-bottom team-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/hai-le-photo.jpeg" alt="Hai Le" style="width:100%">
+        <div class="w3-container">
+          <h3>Hai Le</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Characterising abnormal early brain development using diffusion MRI and machine learning.</p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/le.hai"><i class="fa fa-university"> </i></a>
+            <a href="mailto:le.hai(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Helena Sousa -->
+    <div class="w3-col l2 m4 w3-margin-bottom team-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/helena-sousa-photo.jpg" alt="Helena Sousa" style="width:100%">
+        <div class="w3-container">
+          <h3>Helena Sousa</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Using Deep learning to study Early Neurodevelopment with Multimodal MR Imaging data of the Fetal Brain.</p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/k21019114"><i class="fa fa-university"> </i></a>
+            <a href="mailto:helena.sousa(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ioannis Valasakis -->
+    <div class="w3-col l2 m4 w3-margin-bottom team-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/ioannis-valasakis-photo.jpg" alt="Ioannis Valasakis" style="width:100%">
+        <div class="w3-container">
+          <h3>Ioannis Valasakis</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Developing methods for predicting phenotypes for ASD from neonatal brain connectivity.</p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/ioannis-valasakis"><i class="fa fa-university"> </i></a>
+            <a href="https://github.com/wizofe"><i class="fa fa-github"> </i></a>
+            <a href="https://www.code-neuro.com/author/ioannis-valasakis/"><i class="fa fa-link"> </i></a>
+            <a href="mailto:ioannis.valasakis(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Another group of 6 people -->
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+
+    <!-- Lindsay Munroe -->
+    <div class="w3-col l2 m4 w3-margin-bottom team-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/lindsay-munroe-photo.jpg" alt="Lindsay Munroe" style="width:100%">
+        <div class="w3-container">
+          <h3>Lindsay Munroe</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Developing deep learning tools for mining for iron in the brain.                                                                 </p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/lindsay-munroe/"><i class="fa fa-university"> </i></a>
+            <a href="mailto:lindsay.munroe(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paula Ramirez Gilliland -->
+    <div class="w3-col l2 m4 w3-margin-bottom team-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/paula-gilliland-photo.jpg" alt="Paula Ramirez Gilliland" style="width:100%">
+        <div class="w3-container">
+          <h3>Paula Ramirez Gilliland</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Deep learning for diagnosis of congenital heart disease in fetus using MRI and ultrasound.</p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/paula-ramirez-gilliland"><i class="fa fa-university"> </i></a>
+            <a href="mailto:paula.ramirez_gilliland(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Suryava Bhattacharya -->
+    <div class="w3-col l2 m4 w3-margin-bottom team-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/suryava-bhattacharya-photo.jpg" alt="Suryava Bhattacharya" style="width:100%">
+        <div class="w3-container">
+          <h3>Suryava Bhattacharya</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Quantitative mapping of developing fetal organs using dynamic MRI and artificial neural networks.</p>
+          <p>
+            <a href="https://kclpure.kcl.ac.uk/portal/en/persons/suryava-bhattacharya/"><i class="fa fa-university"> </i></a>
+            <a href="mailto:suryava.bhattacharya(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Yilan Dong -->
+    <div class="w3-col l2 m4 w3-margin-bottom team-col-minsize">
+      <div class="w3-card">
+        <img src="imgs/team/yilan-dong-photo.jpg" alt="Yilan Dong" style="width:100%">
+        <div class="w3-container">
+          <h3>Yilan Dong</h3>
+          <p class="w3-opacity">PhD Student</p>
+          <p>Developing machine learning tools to uncover the early origins of neurodevelopmental disorders.</p>
+          <p>
+            <a href="https://www.kcl.ac.uk/people/yilan-dong"><i class="fa fa-university"> </i></a>
+            <a href="https://www.code-neuro.com/author/yilan-dong/"><i class="fa fa-link"> </i></a>
+            <a href="mailto:yilan.dong(at)kcl.ac.uk"><i class="fa fa-envelope"> </i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+<!-- Delimiter -->
+<div class="w3-container w3-row w3-center w3-white w3-padding-16"></div>
+<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#team" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <br>
+  <br>
+  <br>
+  <div class="w3-xlarge w3-section">
+    <!-- class="circle-border" -->
+    <img src="imgs/viz/KCL-logo.jpg" alt="King's College London Logo" style="width:5%">
+    <img src="imgs/viz/Wellcome-logo.jpeg" alt="Wellcome Logo" style="width:3.8%">
+    <img src="imgs/viz/ERC-logo.jpg" alt="European Research Council Logo" style="width:4%">
+    <img src="imgs/viz/Baby-Logo.png" alt="Baby drawing Logo by Irina Grigorescu" style="width:2%">
+  </div>
+  <br>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>

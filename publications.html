@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BABY-MedIA@KCL</title>
+<link rel="icon" type="image/x-icon" href="imgs/viz/Baby-Logo-sm.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="style/styles.css">
+</head>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button w3-wide"><img src="imgs/viz/Baby-Logo-sm.svg" height="18" alt="babymedia icon" /> BABY-MedIA@KCL</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="projects.html" class="w3-bar-item w3-button"><i class="fa fa-puzzle-piece"></i> PROJECTS</a>
+      <a href="software.html" class="w3-bar-item w3-button"><i class="fa fa-github-alt"></i> SOFTWARE</a>
+      <a href="publications.html" class="w3-bar-item w3-button"><i class="fa fa-child"></i> PUBLICATIONS</a>
+      <a href="team.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>      
+      <a href="about.html#about" class="w3-bar-item w3-button"><i class="fa fa-info"></i> ABOUT US</a>
+      <a href="about.html#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="projects.html" onclick="w3_close()" class="w3-bar-item w3-button">PROJECTS</a>
+  <a href="software.html" onclick="w3_close()" class="w3-bar-item w3-button">SOFTWARE</a>
+  <a href="publications.html" onclick="w3_close()" class="w3-bar-item w3-button">PUBLICATIONS</a>
+  <a href="team.html" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="about.html#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT US</a>
+  <a href="contact.html#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Publications Section -->
+<div class="w3-container" style="padding:128px 16px" id="publications">
+  <h3 class="w3-center">PUBLICATIONS</h3>
+
+  <!-- Groups of three -->
+  <div class="w3-row-padding" style="margin-top:64px">
+    
+    <!-- publication 1 -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <h3 class="w3-opacity">Effect of schizophrenia common variants on infant brain volumes: cross-sectional study in 207 term neonates in developing Human Connectome Project</h3>
+        <h4>Hai Le et al., 2023</h4><br>
+        <img src="imgs/publications/hai-schizophrenia.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Effect of schizophrenia common variants on infant brain volumes: cross-sectional study in 207 term neonates in developing Human Connectome Project">
+        <br><br>
+        <a href="https://www.nature.com/articles/s41398-023-02413-6" class="w3-button w3-black w3-left"><i class="fa fa-link"> </i>Translational Psychiatry</a>
+      </div>
+    </div>
+
+    <!-- publication 2 -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <h3 class="w3-opacity">Automated Multi-class Fetal Cardiac Vessel Segmentation in Aortic Arch Anomalies Using T2-Weighted 3D Fetal MRI</h3>
+        <h4>Paula Ramirez Gilliland et al., 2022</h4><br>
+        <img src="imgs/publications/paula-mcseg.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Automated Multi-class Fetal Cardiac Vessel Segmentation">
+        <br><br>
+        <a href="https://link.springer.com/chapter/10.1007/978-3-031-17117-8_8" class="w3-button w3-black w3-left"><i class="fa fa-link"> </i>Springer</a>
+      </div>
+    </div>
+
+    <!-- publication 3 -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <h3 class="w3-opacity">Harmonized Segmentation of Neonatal Brain MRI</h3>
+        <h4 >Irina Grigorescu et al., 2021</h4><br>
+        <img src="imgs/publications/irina-uda.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Harmonized Segmentation of Neonatal Brain MRI">
+        <br><br>
+        <a href="https://www.frontiersin.org/articles/10.3389/fnins.2021.662005/full" class="w3-button w3-black w3-left"><i class="fa fa-link"> </i>Frontiers in Neuroscience</a> 
+      </div>
+    </div>
+  </div>
+
+  <!-- Groups of three -->
+  <div class="w3-row-padding" style="margin-top:64px">
+    <!-- publication 1 -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <h3 class="w3-opacity">Quantitative T2 Relaxometry in Fetal Brain: Validation Using Modified FaBiaN Fetal Brain MRI Simulator</h3>
+        <h4>Bhattacharya, S. et al., 2023</h4><br>
+        <img src="imgs/publications/suryava-ssfse.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quantitative T2 Relaxometry in Fetal Brain: Validation Using Modified FaBiaN Fetal Brain MRI Simulator">
+        <br><br>
+        <a href="https://doi.org/10.1007/978-3-031-45544-5_4" class="w3-button w3-black"><i class="fa fa-link"> </i>PIPPI, LNCS, Springer</a>
+      </div>
+    </div>
+    
+    <!-- publication 2 -->
+
+    <!-- publication 3 -->
+
+  </div>
+
+</div>
+
+<!-- Delimiter -->
+<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
+
+<!-- BOOKS Section -->
+<div class="w3-container" style="padding:128px 16px" id="books">
+  <h3 class="w3-center">BOOKS</h3>
+
+  <!-- Groups of three -->
+  <div class="w3-row-padding" style="margin-top:64px">
+    
+    <!-- book 1 -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <h3 class="w3-opacity">Machine Learning for Biomedical Applications: with Scikit-Learn and Pytorch</h3>
+        <h4>Maria Deprez and Emma C. Robinson, 2022</h4><br>
+        <img src="imgs/publications/maria-ml-book.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Machine Learning for Biomedical Applications: with Scikit-Learn and Pytorch">
+        <br><br>
+        <a href="https://www.sciencedirect.com/book/9780128229040/machine-learning-for-biomedical-applications" class="w3-button w3-black"><i class="fa fa-link"> </i>Elsevier</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Delimiter -->
+<div class="w3-container w3-row w3-center w3-white w3-padding-16"></div>
+<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#publications" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <br>
+  <br>
+  <br>
+  <div class="w3-xlarge w3-section">
+    <!-- class="circle-border" -->
+    <img src="imgs/viz/KCL-logo.jpg" alt="King's College London Logo" style="width:5%">
+    <img src="imgs/viz/Wellcome-logo.jpeg" alt="Wellcome Logo" style="width:3.8%">
+    <img src="imgs/viz/ERC-logo.jpg" alt="European Research Council Logo" style="width:4%">
+    <img src="imgs/viz/Baby-Logo.png" alt="Baby drawing Logo by Irina Grigorescu" style="width:2%">
+  </div>
+  <br>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>

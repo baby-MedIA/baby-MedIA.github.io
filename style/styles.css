@@ -43,17 +43,21 @@ body, html {
   background-size:contain;
   background-color:#000;
   background-image: url("../imgs/viz/website-main-pic.png");
-  min-height: 90%;
+  min-height: 100%;
 }
 
 .w3-bar .w3-button {
   padding: 16px;
 }
 
-.my-col-minsize {
+.team-col-minsize {
   min-height: 550px;
 }
 
 .circle-border {
   border-radius: 50%;
+}
+
+a+a {
+  margin-left: 10px;
 }

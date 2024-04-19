@@ -17,37 +17,10 @@
 
 <body>
 
-<!-- Script for the background images to cycle through -->
-<script type="text/javascript">
-  $(function() {
-  // set `$.fx.interval` at `0`
-  $.fx.interval = 0;
-  (function cycleBgImage(elem, bgimg) {
-// `elem`:`#slideshow`
-// set, reset, delay to `1000` after background image reset
-elem.css("backgroundImage", bgimg)
-  // fade in background image
-  .fadeTo(1000, 1, "linear", function() {
-    // set `delay` before fadeing out image
-    // fade in background image        
-    $(this).delay(10000, "fx").fadeTo(1000, 0, "linear", function() {
-      // split background image string at comma , creating array
-      var img = $(this).css("backgroundImage").split(","),
-        // concat first background image to `img` array,
-        // remove first background image from `img` array
-        bgimg = img.concat(img[0]).splice(1).join(",");
-      // recursively call `cycleBgImage`
-      cycleBgImage(elem, bgimg);
-    });
-  });
-  }($("#slideshow")));
-});
-</script>
-
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="imgs/viz/Baby-Logo-sm.svg" height="18" alt="babymedia icon" /> BABY-MedIA@KCL</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-wide"><img src="imgs/viz/Baby-Logo-sm.svg" height="18" alt="babymedia icon" /> BABY-MedIA@KCL</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="projects.html" class="w3-bar-item w3-button"><i class="fa fa-puzzle-piece"></i> PROJECTS</a>
@@ -76,46 +49,61 @@ elem.css("backgroundImage", bgimg)
   <a href="contact.html#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
-<!-- Header with full-height image -->
-<div class="w3-container w3-row w3-center w3-black w3-padding-32"></div>
-<div class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small">
-      <img src="imgs/viz/Baby-Logo.png" height="100" alt="babymedia icon" />Welcome to Baby-MedIA@KCL
-    </span>
-    <br><br>
-    <h3>We are a group of researchers based at King's College London,<br>
-        developing image analysis tools to study perinatal development.<br><br>
-        Our interests include: <br><br>
-        <ul>
-          <li>Early Life Brain Development</li>
-          <li>Motion Corrected Fetal MRI</li>
-          <li>Image Analysis for Diffusion, Functional and Quantitative MRI</li>
-          <li>Fetal Ultrasound</li>
-          <li>Deep Learning Image Segmentation and Registration</li>
-          <li>Interpretable Machine Learning</li>
-        </ul>
-    </h3>
-    <br><br>
-    <p>
-      <a href="projects.html" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Our Projects</a>
-      <a href="team.html" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Our Team</a>
-      <a href="https://github.com/baby-MedIA" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Our Github Page</a>
-    </p>
+<!-- Projects -->
+<div class="w3-container" style="padding:128px 16px" id="projects">
+  <h3 class="w3-center">PROJECTS</h3>
+
+  <!-- ............... -->
+  <!-- Groups of three -->
+  <div class="w3-row-padding" style="margin-top:64px">
+    
+    <!-- Project 1 -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <!-- title -->
+        <h3 class="w3-opacity">Exploring Genetic Links: Neuroimaging Insights into Autism and Schizophrenia</h3>
+        <!-- description -->
+        <h4>This project focuses on exploring connections between neuroimaging indicators associated with genetic factors linked to both schizophrenia and autism. Our findings contribute to the growing body of evidence suggesting that common genetic variations associated with autism could potentially influence structural brain changes from an early stage of development.</h4>
+        <!-- image and alt -->
+        <img src="imgs/projects/projects-hai-1.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Exploring Genetic Links: Neuroimaging Insights into Autism and Schizophrenia">
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <!-- title -->
+        <h3 class="w3-opacity">Reproducible comparison and interpretation of machine learning classifiers to predict autism on the ABIDE multimodal dataset</h3>
+        <!-- description -->
+        <h4>Five machine-learning models were trained to classify autism using ABIDE. Similar performance suggested accuracy variations in literature may stem from inclusion criteria, modalities and evaluation pipelines. SmoothGrad investigated the stability of features identified by models and showed structural and functional features from ventricles and temporal cortex contribute to autism identification. The results suggested that structural features from the ventricles and functional features from the temporal cortex made the most significant contributions to the algorithms identifying autistic participants.</h4>
+        <!-- image and alt -->
+        <img src="imgs/projects/projects-yilan-1.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Reproducible comparison and interpretation of machine learning classifiers to predict autism on the ABIDE multimodal dataset">
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <!-- title -->
+        <h3 class="w3-opacity">Segmentation of 6 months old babies</h3>
+        <!-- description -->
+        <h4>This project is about segmentation of 6 months old babies</h4>
+        <!-- image and alt -->
+        <img src="imgs/projects/projects-yilan-2.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Segmentation of 6 months old babies">
+      </div>
+    </div>
+
   </div>
+
 </div>
+
+<!-- Delimiter -->
+<div class="w3-container w3-row w3-center w3-white w3-padding-16"></div>
+<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <!-- <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div> -->
+  <a href="#projects" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <br>
   <br>
   <br>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BABY-MedIA@KCL</title>
+<link rel="icon" type="image/x-icon" href="imgs/viz/Baby-Logo-sm.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="style/styles.css">
+</head>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button w3-wide"><img src="imgs/viz/Baby-Logo-sm.svg" height="18" alt="babymedia icon" /> BABY-MedIA@KCL</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="projects.html" class="w3-bar-item w3-button"><i class="fa fa-puzzle-piece"></i> PROJECTS</a>
+      <a href="software.html" class="w3-bar-item w3-button"><i class="fa fa-github-alt"></i> SOFTWARE</a>
+      <a href="publications.html" class="w3-bar-item w3-button"><i class="fa fa-child"></i> PUBLICATIONS</a>
+      <a href="team.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>      
+      <a href="about.html#about" class="w3-bar-item w3-button"><i class="fa fa-info"></i> ABOUT US</a>
+      <a href="about.html#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="projects.html" onclick="w3_close()" class="w3-bar-item w3-button">PROJECTS</a>
+  <a href="software.html" onclick="w3_close()" class="w3-bar-item w3-button">SOFTWARE</a>
+  <a href="publications.html" onclick="w3_close()" class="w3-bar-item w3-button">PUBLICATIONS</a>
+  <a href="team.html" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="about.html#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT US</a>
+  <a href="contact.html#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Software -->
+<div class="w3-container" style="padding:128px 16px" id="software">
+  <h3 class="w3-center">SOFTWARE</h3>
+
+  <!-- ............... -->
+  <!-- Groups of three -->
+  <div class="w3-row-padding" style="margin-top:64px">
+    
+    <!-- Softwares 2024 -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <!-- title -->
+        <h3 class="w3-opacity">Autism prediction on the ABIDE dataset</h3>
+        <!-- description -->
+        <h4>Comparison and interpretation of machine learning classifiers to predict autism on the ABIDE multimodal dataset.
+        </h4>
+        <!-- author, year -->
+        <h4>Yilan Dong, 2024</h4><br>
+        <!-- image and alt -->
+        <img src="imgs/software/yilan-abide.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Autism prediction on the ABIDE dataset">
+        <br><br>
+        <!-- link -->
+        <a href="https://github.com/baby-MedIA/Machine-learning-with-ABIDE" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+      </div>
+    </div>
+
+    <!-- Softwares 2023 -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <!-- title -->
+        <h3 class="w3-opacity">Fetal brain transient segmentation</h3>
+        <!-- description -->
+        <h4>Automatic Segmentation of Fetal brain into 25 tissues L/R including transient regions (Subplate and the Proliferative Zones: Ventricular Zone and Ganglionic Eminence) - trained with dHCP subjects from 21 to 36 weeks of gestational age.</h4>
+        <!-- author, year -->
+        <h4>Helena Sousa, 2023</h4><br>
+        <!-- image and alt -->
+        <img src="imgs/software/helena-fetal-seg.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Fetal brain transient segmentation">
+        <br><br>
+        <!-- link -->
+        <a href="https://github.com/baby-MedIA/Fetal-brain-transient-segmentation" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+      </div>
+    </div>
+
+
+    <!-- Software 2023 cont'd -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <!-- title -->
+        <h3 class="w3-opacity">Multi-task Anomaly Segmentation and Classification</h3>
+        <!-- description -->
+        <h4>A Pytorch and <a href="https://monai.io/">MONAI</a> based multi-task framework for multi-class segmentation and classification.</h4>
+        <!-- author, year -->
+        <h4>Paula Ramirez Gilliland, 2023</h4><br>
+        <!-- image and alt -->
+        <img src="imgs/software/paula-masc.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Multi-task Anomaly Segmentation and Classification">
+        <br><br>
+        <!-- link -->
+        <a href="https://github.com/baby-MedIA/MASC--vessel-segmentation-classification" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ............... -->
+  <!-- Groups of three -->
+  <div class="w3-row-padding" style="margin-top:64px">
+
+    <!-- Software 2023 cont'd -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <!-- title -->
+        <h3 class="w3-opacity">Attention-driven multi-channel deformable registration of structural and microstructural neonatal data</h3>
+        <!-- description -->
+        <h4>Companion code for the <a href="https://doi.org/10.1007/978-3-031-17117-8_7">"Attention-Driven Multi-channel Deformable Registration of Structural and Microstructural Neonatal Data" paper</a> where we developed an attention-based multi-channel deep learning image registration framework that aims to combine information from structural MRI neonatal scans with diffusion-derived maps.</h4>
+        <!-- author, year -->
+        <h4>Irina Grigorescu, 2023</h4><br>
+        <!-- image and alt -->
+        <img src="imgs/software/irina-attnreg.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Attention-driven multi-channel deformable registration of structural and microstructural neonatal data">
+        <br><br>
+        <!-- link -->
+        <a href="https://github.com/baby-MedIA/attentionneonatalmriregistration" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+      </div>
+    </div>
+
+    <!-- Software 2023 cont'd -->
+    <div class="w3-col m4">
+      <div class="w3-container">
+        <!-- title -->
+        <h3 class="w3-opacity">Harmonised segmentation of neonatal brain MRI</h3>
+        <!-- description -->
+        <h4>Companion code for the <a href="https://doi.org/10.3389/fnins.2021.662005">"Harmonized Segmentation of Neonatal Brain MRI" paper</a> where we investigated unsupervised domain adaptation (UDA) methods and proposed the use of NCC loss to enforce image similarity between real and synthesised images, with the aim of predicting brain tissue segmentations of T2w MRI data of an unseen neonatal population.</h4>
+        <!-- author, year -->
+        <h4>Irina Grigorescu, 2023</h4><br>
+        <!-- image and alt -->
+        <img src="imgs/software/irina-uda.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Harmonised segmentation of neonatal brain MRI">
+        <br><br>
+        <!-- link -->
+        <a href="https://github.com/baby-MedIA/udaneonatalmri" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+      </div>
+    </div>
+
+  <!-- Software 2023 cont'd -->
+  <div class="w3-col m4">
+    <div class="w3-container">
+      <!-- title -->
+      <h3 class="w3-opacity">Fetal SS FSE Simulation - A modified FaBiAN phantom</h3>
+      <!-- description -->
+      <h4>A silmulation of single-shot Fast spin echo sequences on a simulated moving fetal brain for a Philip\'s MRI system.</h4>
+      <!-- author, year -->
+      <h4>Suryava Bhattacharya, 2023</h4><br>
+      <!-- image and alt -->
+      <img src="imgs/software/suryava-sim.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Fetal SS FSE Simulation - A modified FaBiAN phantom">
+      <br><br>
+      <!-- link -->
+      <a href="https://github.com/baby-MedIA/FetalSSFSESimulation" class="w3-button w3-black"><i class="fa fa-github"> </i>Github</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Delimiter -->
+<div class="w3-container w3-row w3-center w3-white w3-padding-16"></div>
+<div class="w3-container w3-row w3-center w3-black w3-padding-64"></div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#software" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <br>
+  <br>
+  <br>
+  <div class="w3-xlarge w3-section">
+    <!-- class="circle-border" -->
+    <img src="imgs/viz/KCL-logo.jpg" alt="King's College London Logo" style="width:5%">
+    <img src="imgs/viz/Wellcome-logo.jpeg" alt="Wellcome Logo" style="width:3.8%">
+    <img src="imgs/viz/ERC-logo.jpg" alt="European Research Council Logo" style="width:4%">
+    <img src="imgs/viz/Baby-Logo.png" alt="Baby drawing Logo by Irina Grigorescu" style="width:2%">
+  </div>
+  <br>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>
