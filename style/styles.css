@@ -58,6 +58,13 @@ body, html {
   border-radius: 50%;
 }
 
+div.transbox {
+  background: rgba(0, 0, 0, 0.2); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  border-radius:2%;
+  padding:2px;
+}
+
 a+a {
   margin-left: 10px;
 }
