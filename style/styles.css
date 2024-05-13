@@ -50,8 +50,11 @@ body, html {
   padding: 16px;
 }
 
-.team-col-minsize {
-  min-height: 550px;
+.team-text-minsize {
+  min-height: 125px;
+}
+.team-name-minsize {
+  min-height: 70px;
 }
 
 .circle-border {
